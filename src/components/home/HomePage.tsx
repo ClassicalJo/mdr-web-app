@@ -1,19 +1,15 @@
 import { ArrowDown, ArrowRight, Check, Heart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import lifestyle from "@/assets/mdr/lifestyle.jpg";
-import homeScreen from "@/assets/mdr/home-screen.png";
-import morningStretch from "@/assets/mdr/morning-stretch.png";
-import progress from "@/assets/mdr/progress.png";
-import gratitude from "@/assets/mdr/gratitude.jpg";
-import mantra from "@/assets/mdr/mantra.jpg";
-import meditation from "@/assets/mdr/meditation.jpg";
 import liv from "@/assets/mdr/liv.jpg";
 import { AppDownloadButtons } from "./AppDownloadButtons";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { HeroScreens } from "./HeroScreens";
 import { SectionHeading } from "./SectionHeading";
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { reasons, ritualAreas, toolkit } from "./content";
+import { appScreens, insideTags } from "./screens";
 
 export function HomePage() {
   return (
@@ -44,7 +40,7 @@ export function HomePage() {
             </div>
             <div className="ritual-reveal relative z-10 h-[500px] sm:h-[590px]">
               <div className="absolute inset-x-[14%] top-0 bottom-0 overflow-hidden rounded-[2.25rem] bg-card p-2.5 shadow-2xl shadow-foreground/10 ring-1 ring-foreground/10">
-                <img src={homeScreen} alt="My Daily Ritual app home screen" className="h-full w-full rounded-[1.75rem] object-cover object-top" fetchPriority="high" />
+                <HeroScreens />
               </div>
               <div className="ritual-float glass-panel absolute left-0 top-14 w-40 -rotate-6 rounded-2xl p-4 shadow-xl shadow-foreground/10 ring-1 ring-foreground/5 sm:w-48">
                 <div className="flex items-center justify-between"><span className="font-kick text-xs font-semibold uppercase text-primary">Morning ritual</span><span className="text-xs text-sage">3/5</span></div>
@@ -108,23 +104,22 @@ export function HomePage() {
 
         <section className="border-t border-border">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
-            <SectionHeading eyebrow="04 — What's inside" title="Your whole ritual, beautifully connected" description="Real app experiences for gratitude, movement, meditation, mood and progress — designed to work together throughout your day." />
-            <div className="mt-12 grid gap-4 md:grid-cols-12 md:grid-rows-[310px_250px]">
-              <figure className="group relative overflow-hidden rounded-2xl bg-secondary/60 ring-1 ring-foreground/5 md:col-span-5 md:row-span-2">
-                <img src={gratitude} alt="Daily gratitude ritual in the app" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
-                <figcaption className="absolute inset-x-4 bottom-4 rounded-xl bg-background/85 p-4 backdrop-blur-md"><span className="font-kick text-xs font-semibold uppercase text-primary">Daily rituals</span><p className="mt-1 font-display text-xl">Gratitude, mantra & meditation</p></figcaption>
-              </figure>
-              <figure className="group relative overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 md:col-span-4">
-                <img src={morningStretch} alt="Guided morning movement in the app" loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
-                <figcaption className="absolute inset-x-4 bottom-4 rounded-xl bg-background/85 p-3 backdrop-blur-md"><span className="font-display text-lg">Gentle movement</span></figcaption>
-              </figure>
-              <figure className="group relative overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 md:col-span-3 md:row-span-2">
-                <img src={progress} alt="Progress and habit tracking in the app" loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
-                <figcaption className="absolute inset-x-4 bottom-4 rounded-xl bg-background/85 p-3 backdrop-blur-md"><span className="font-display text-lg">Progress tracking</span></figcaption>
-              </figure>
-              <div className="grid grid-cols-2 gap-4 md:col-span-4">
-                <img src={mantra} alt="Mantra content in My Daily Ritual" loading="lazy" className="h-full min-h-48 w-full rounded-2xl object-cover ring-1 ring-foreground/5" />
-                <img src={meditation} alt="Meditation content in My Daily Ritual" loading="lazy" className="h-full min-h-48 w-full rounded-2xl object-cover ring-1 ring-foreground/5" />
+            <SectionHeading eyebrow="04 — What's inside" title="Look inside the app" description="Every part of your ritual lives in one calm, connected space — from gratitude and mantras to movement, habits, mood and progress." centered />
+            <ul className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
+              {insideTags.map((tag) => (
+                <li key={tag} className="rounded-full bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground ring-1 ring-foreground/5">{tag}</li>
+              ))}
+            </ul>
+            <div className="relative mt-12 rounded-[2rem] bg-secondary/45 px-4 py-10 ring-1 ring-foreground/5 sm:px-8">
+              <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-6 lg:overflow-visible">
+                {appScreens.map((s, i) => (
+                  <figure key={s.label} className={`w-[46%] shrink-0 snap-center sm:w-[30%] lg:w-auto ${i % 2 === 1 ? "lg:translate-y-8" : ""}`}>
+                    <div className="overflow-hidden rounded-[1.5rem] bg-card p-1.5 shadow-xl shadow-foreground/10 ring-1 ring-foreground/10">
+                      <img src={s.src} alt={`${s.label} screen in My Daily Ritual`} loading="lazy" className="aspect-[9/19] w-full rounded-[1.15rem] object-cover object-top" />
+                    </div>
+                    <figcaption className="mt-3 text-center font-display text-base">{s.label}</figcaption>
+                  </figure>
+                ))}
               </div>
             </div>
           </div>
@@ -163,13 +158,6 @@ export function HomePage() {
               </div>
               <div className="mt-7 flex items-center gap-3 font-display text-xl"><Heart className="size-5 fill-primary text-primary" /> Created by women, for women who want more from life.</div>
             </div>
-          </div>
-        </section>
-
-        <section className="border-t border-border bg-secondary/55">
-          <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 lg:py-20">
-            <SectionHeading eyebrow="Begin again" title="One small ritual can change the shape of your day." centered />
-            <div className="mt-7"><AppDownloadButtons dark centered /></div>
           </div>
         </section>
       </main>
