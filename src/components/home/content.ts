@@ -7,6 +7,9 @@ import {
   Target,
   Wind,
 } from "lucide-react";
+import reviewLjp from "@/assets/mdr/gratitude.jpg";
+import reviewBuick from "@/assets/mdr/mantra.jpg";
+import reviewChloe from "@/assets/mdr/meditation.jpg";
 
 export const APP_STORE_URL = "https://apps.apple.com/au/app/my-daily-ritual/id6742334874";
 export const PLAY_STORE_URL =
@@ -42,7 +45,7 @@ export const ritualAreas = [
 ];
 
 export const testimonials = [
-  "The app I've been waiting for! Having everything in one place has made it so much more achievable to build my dream routine.",
-  "Game-changing for my wellbeing and productivity! After just a few weeks I already feel happier, more focused, less stressed and in control of my day.",
-  "It's like it was designed exactly for me",
+  { quote: "Loving having everything in one place! Having an app that not only tracks my habits but has the activities and systems built in too, has made it so much more achievable to build my dream routine.", user: "Ljp1245", image: reviewLjp, rating: 5 },
+  { quote: "After just a few weeks I already feel happier, more focused, less stressed and in control of my day. I have already recommended this app to all my family and friends!", user: "buickqwe", image: reviewBuick, rating: 5 },
+  { quote: "It’s like it was designed exactly for me.", user: "ChloeSheldon123!!", image: reviewChloe, rating: 5 },
 ];
