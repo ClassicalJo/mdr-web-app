@@ -9,7 +9,7 @@ import { HeroScreens } from "./HeroScreens";
 import { SectionHeading } from "./SectionHeading";
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { reasons, ritualAreas, toolkit } from "./content";
-import { appScreens, insideTags } from "./screens";
+import { insideScreens } from "./screens";
 
 export function HomePage() {
   return (
@@ -105,23 +105,19 @@ export function HomePage() {
         <section className="border-t border-border">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
             <SectionHeading eyebrow="04 — What's inside" title="Look inside the app" description="Every part of your ritual lives in one calm, connected space — from gratitude and mantras to movement, habits, mood and progress." centered />
-            <ul className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
-              {insideTags.map((tag) => (
-                <li key={tag} className="rounded-full bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground ring-1 ring-foreground/5">{tag}</li>
+            <ul className="-mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:gap-8">
+              {insideScreens.map((s) => (
+                <li key={s.category} className="w-[82%] max-w-sm shrink-0 snap-center sm:w-auto sm:max-w-none">
+                  <figure className="group h-full overflow-hidden rounded-3xl bg-card ring-1 ring-foreground/5 transition-transform duration-300 hover:-translate-y-1">
+                    <img src={s.src} alt={s.alt} loading="lazy" className="aspect-square w-full object-cover" />
+                    <figcaption className="px-5 py-4 sm:px-6 sm:py-5">
+                      <span className="font-kick text-xs font-semibold uppercase text-primary">{s.category}</span>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{s.note}</p>
+                    </figcaption>
+                  </figure>
+                </li>
               ))}
             </ul>
-            <div className="relative mt-12 rounded-[2rem] bg-secondary/45 px-4 py-10 ring-1 ring-foreground/5 sm:px-8">
-              <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-7 lg:overflow-visible">
-                {appScreens.map((s, i) => (
-                  <figure key={s.label} className={`w-[46%] shrink-0 snap-center sm:w-[30%] lg:w-auto ${i % 2 === 1 ? "lg:translate-y-8" : ""}`}>
-                    <div className="aspect-[1/2.05]">
-                      <img src={s.src} alt={`${s.label} screen in My Daily Ritual`} loading="lazy" className="h-full w-full object-contain" />
-                    </div>
-                    <figcaption className="mt-3 text-center font-display text-base">{s.label}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
