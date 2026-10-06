@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep homepage content in structured data and render it through focused reusable sections, so future content or API connections do not require layout rewrites.
+- Keep review image, exact excerpt, username, and rating together in each testimonial record to prevent attribution mismatches.
+- Reference supplied app media through CDN asset pointers; show complete phone frames and provide a static fallback and reduced-motion support for the Home video.

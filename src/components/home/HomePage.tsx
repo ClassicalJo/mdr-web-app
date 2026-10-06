@@ -39,7 +39,7 @@ export function HomePage() {
               </a>
             </div>
             <div className="ritual-reveal relative z-10 h-[500px] sm:h-[590px]">
-              <div className="absolute inset-x-[14%] top-0 bottom-0 overflow-hidden rounded-[2.25rem] bg-card p-2.5 shadow-2xl shadow-foreground/10 ring-1 ring-foreground/10">
+              <div className="absolute inset-x-[14%] top-0 bottom-0">
                 <HeroScreens />
               </div>
               <div className="ritual-float glass-panel absolute left-0 top-14 w-40 -rotate-6 rounded-2xl p-4 shadow-xl shadow-foreground/10 ring-1 ring-foreground/5 sm:w-48">
@@ -111,11 +111,11 @@ export function HomePage() {
               ))}
             </ul>
             <div className="relative mt-12 rounded-[2rem] bg-secondary/45 px-4 py-10 ring-1 ring-foreground/5 sm:px-8">
-              <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-6 lg:overflow-visible">
+              <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-7 lg:overflow-visible">
                 {appScreens.map((s, i) => (
                   <figure key={s.label} className={`w-[46%] shrink-0 snap-center sm:w-[30%] lg:w-auto ${i % 2 === 1 ? "lg:translate-y-8" : ""}`}>
-                    <div className="overflow-hidden rounded-[1.5rem] bg-card p-1.5 shadow-xl shadow-foreground/10 ring-1 ring-foreground/10">
-                      <img src={s.src} alt={`${s.label} screen in My Daily Ritual`} loading="lazy" className="aspect-[9/19] w-full rounded-[1.15rem] object-cover object-top" />
+                    <div className="aspect-[1/2.05]">
+                      <img src={s.src} alt={`${s.label} screen in My Daily Ritual`} loading="lazy" className="h-full w-full object-contain" />
                     </div>
                     <figcaption className="mt-3 text-center font-display text-base">{s.label}</figcaption>
                   </figure>
