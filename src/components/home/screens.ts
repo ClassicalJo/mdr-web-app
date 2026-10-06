@@ -6,8 +6,10 @@ import reflection from "@/assets/mdr/app-Reflection.png.asset.json";
 import progress from "@/assets/mdr/app-ProgressTracker.png.asset.json";
 import onboard from "@/assets/mdr/app-Onboard.png.asset.json";
 import homeVideo from "@/assets/mdr/home-demo.mp4.asset.json";
+import homeWebm from "@/assets/mdr/home-demo.webm.asset.json";
 
 export const homeVideoUrl = homeVideo.url;
+export const homeWebmUrl = homeWebm.url;
 
 export const appScreens = [
   { label: "Home", src: home.url, tags: ["Daily rituals"] },

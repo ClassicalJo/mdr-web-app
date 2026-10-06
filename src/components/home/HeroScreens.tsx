@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { appScreens, homeVideoUrl } from "./screens";
+import { appScreens, homeVideoUrl, homeWebmUrl } from "./screens";
 
 export function HeroScreens() {
   const [active, setActive] = useState(0);
@@ -22,7 +22,6 @@ export function HeroScreens() {
     if (!video.current) return;
     if (paused || active !== 0 || reducedMotion) video.current.pause();
     else {
-      video.current.currentTime = 0;
       void video.current.play().catch(() => setVideoFailed(true));
     }
   }, [active, paused, reducedMotion]);
@@ -45,7 +44,7 @@ export function HeroScreens() {
            className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"}`}
         />
       ))}
-      {!reducedMotion && !videoFailed && <video ref={video} src={homeVideoUrl} poster={appScreens[0]?.src} muted playsInline preload="auto" aria-label="My Daily Ritual Home app preview" aria-hidden={active !== 0} onEnded={() => setActive(1)} onError={() => setVideoFailed(true)} className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ${active === 0 ? "opacity-100" : "opacity-0"}`} />}
+      {!reducedMotion && !videoFailed && <video ref={video} poster={appScreens[0]?.src} muted playsInline preload="auto" aria-label="My Daily Ritual Home app preview" aria-hidden={active !== 0} onEnded={() => { if (video.current) video.current.currentTime = 0; setActive(1); }} onError={() => setVideoFailed(true)} className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ${active === 0 ? "opacity-100" : "opacity-0"}`}><source src={homeWebmUrl} type="video/webm" /><source src={homeVideoUrl} type="video/mp4" /></video>}
       <div className="absolute inset-x-0 bottom-3 flex justify-center">
         <div className="flex items-center gap-1.5 rounded-full bg-background/75 px-2.5 py-1.5 backdrop-blur-md">
           {appScreens.map((s, i) => (
