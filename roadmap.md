@@ -1,3 +1,3 @@
-- [ ] Replace misplaced review images with supplied app screens.
-- [ ] Match review images, exact excerpts, and usernames; remove numbered review controls.
-- [ ] Evaluate and integrate Home video if suitable; verify desktop and mobile.
+- [x] Replace misplaced review images with supplied app screens.
+- [x] Match review images, exact excerpts, and usernames; remove numbered review controls.
+- [x] Evaluate and integrate Home video if suitable; verify desktop and mobile.
