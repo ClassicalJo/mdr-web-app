@@ -2,3 +2,5 @@
 - [x] Match review images, exact excerpts, and usernames; remove numbered review controls.
 - [x] Evaluate and integrate Home video if suitable; verify desktop and mobile.
 - [x] Rework "What's Inside": drop bubble tag pills, use the six supplied marketing screens with category captions; verify desktop and mobile.
+- [ ] Create Contact using the original homepage contact section and original Contact page, preserving the current design and modular React + TypeScript structure.
+- [ ] Verify Contact navigation and contact actions without changing Home.
