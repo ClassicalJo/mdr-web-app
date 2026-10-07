@@ -1,3 +1,4 @@
 - [x] Replace misplaced review images with supplied app screens.
 - [x] Match review images, exact excerpts, and usernames; remove numbered review controls.
 - [x] Evaluate and integrate Home video if suitable; verify desktop and mobile.
+- [x] Rework "What's Inside": drop bubble tag pills, use the six supplied marketing screens with category captions; verify desktop and mobile.
