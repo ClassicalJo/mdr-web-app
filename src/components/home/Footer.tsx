@@ -24,7 +24,7 @@ export function Footer() {
             <div>
               <span className="font-kick text-xs font-semibold uppercase text-primary">Support</span>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-                {navItems.slice(2).map((item) => <li key={item.label}><a href={item.href} className="hover:text-primary">{item.label}</a></li>)}
+                {navItems.slice(2).map((item) => <li key={item.label}>{item.href.startsWith("http") ? <a href={item.href} className="hover:text-primary">{item.label}</a> : <Link to={item.href} className="hover:text-primary">{item.label}</Link>}</li>)}
               </ul>
             </div>
             <div>
