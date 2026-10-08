@@ -1,15 +1,7 @@
-import {
-  CalendarDays,
-  Heart,
-  MoonStar,
-  Sparkles,
-  Sunrise,
-  Target,
-  Wind,
-} from "lucide-react";
-import reviewLjp from "@/assets/mdr/gratitude.jpg";
-import reviewBuick from "@/assets/mdr/mantra.jpg";
-import reviewChloe from "@/assets/mdr/meditation.jpg";
+import { CalendarDays, Heart, MoonStar, Sparkles, Sunrise, Target, Wind } from "lucide-react";
+import review1 from "@/assets/mdr/review1.jpg";
+import review2 from "@/assets/mdr/review2.jpg";
+import review3 from "@/assets/mdr/review3.jpg";
 
 export const APP_STORE_URL = "https://apps.apple.com/au/app/my-daily-ritual/id6742334874";
 export const PLAY_STORE_URL =
@@ -17,35 +9,108 @@ export const PLAY_STORE_URL =
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Marketplace", href: "/marketplace" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "https://www.mydailyritual.app/privacy-policy" },
+  { label: "Marketplace", href: "/marketplace" },
 ];
 
 export const toolkit = [
-  { title: "Mindset", text: "Mantras and prompts that set the tone before the day begins.", icon: Sparkles },
-  { title: "Planning", text: "A gentle to-do flow that keeps intention ahead of busywork.", icon: CalendarDays },
-  { title: "Habits", text: "Small daily rituals, tracked softly so consistency feels light.", icon: Heart },
-  { title: "Wellness", text: "Breathwork, movement and sleep sounds, ready when you need them.", icon: Wind },
+  {
+    title: "Mindset",
+    text: "Mantras and prompts that set the tone before the day begins.",
+    icon: Sparkles,
+  },
+  {
+    title: "Planning",
+    text: "A gentle to-do flow that keeps intention ahead of busywork.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Habits",
+    text: "Small daily rituals, tracked softly so consistency feels light.",
+    icon: Heart,
+  },
+  {
+    title: "Wellness",
+    text: "Breathwork, movement and sleep sounds, ready when you need them.",
+    icon: Wind,
+  },
 ];
 
 export const reasons = [
-  { title: "All-in-One Toolkit", text: "Mindset, planning, and habits seamlessly integrated into one beautiful space.", number: "01" },
-  { title: "Designed to Be Used", text: "Less navigating, more doing. We've eliminated decision fatigue so you can focus on what matters.", number: "02" },
-  { title: "Your Daily Flow, Sorted", text: "From morning gratitude to nighttime reflection, we guide you through your day with ease.", number: "03" },
-  { title: "Instant Feel-Good Dopamine", text: "Smart breath-work, gratitude practices and mood-boosting tools for when you need them most.", number: "04" },
-  { title: "Fresh Start Every Day", text: "Auto-refresh means no falling off the bandwagon! Every day is a new opportunity to feel your best.", number: "05" },
+  {
+    title: "All-in-One Toolkit",
+    text: "Mindset, planning, and habits seamlessly integrated into one beautiful space.",
+    number: "01",
+  },
+  {
+    title: "Designed to Be Used",
+    text: "Less navigating, more doing. We've eliminated decision fatigue so you can focus on what matters.",
+    number: "02",
+  },
+  {
+    title: "Your Daily Flow, Sorted",
+    text: "From morning gratitude to nighttime reflection, we guide you through your day with ease.",
+    number: "03",
+  },
+  {
+    title: "Instant Feel-Good Dopamine",
+    text: "Smart breath-work, gratitude practices and mood-boosting tools for when you need them most.",
+    number: "04",
+  },
+  {
+    title: "Fresh Start Every Day",
+    text: "Auto-refresh means no falling off the bandwagon! Every day is a new opportunity to feel your best.",
+    number: "05",
+  },
 ];
 
 export const ritualAreas = [
-  { time: "Morning", title: "Morning Rituals", text: "Start your day with intention through guided gratitude practices, mantras, and gentle movement.", icon: Sunrise },
-  { time: "Midday", title: "Productivity Tools", text: "Smart to-do lists, goal setting, and progress tracking that actually work with your life.", icon: Target },
-  { time: "Pause", title: "Wellness Practices", text: "Breathwork, stretching, meditation, and sleep sounds — transforming your phone into your ultimate self-care tool.", icon: Wind },
-  { time: "Evening", title: "Evening Reflection", text: "Wind down with journaling prompts and routines that prepare you for restorative sleep.", icon: MoonStar },
+  {
+    time: "Morning",
+    title: "Morning Rituals",
+    text: "Start your day with intention through guided gratitude practices, mantras, and gentle movement.",
+    icon: Sunrise,
+  },
+  {
+    time: "Midday",
+    title: "Productivity Tools",
+    text: "Smart to-do lists, goal setting, and progress tracking that actually work with your life.",
+    icon: Target,
+  },
+  {
+    time: "Pause",
+    title: "Wellness Practices",
+    text: "Breathwork, stretching, meditation, and sleep sounds — transforming your phone into your ultimate self-care tool.",
+    icon: Wind,
+  },
+  {
+    time: "Evening",
+    title: "Evening Reflection",
+    text: "Wind down with journaling prompts and routines that prepare you for restorative sleep.",
+    icon: MoonStar,
+  },
 ];
 
 export const testimonials = [
-  { quote: "Loving having everything in one place! Having an app that not only tracks my habits but has the activities and systems built in too, has made it so much more achievable to build my dream routine.", user: "Ljp1245", image: reviewLjp, rating: 5 },
-  { quote: "After just a few weeks I already feel happier, more focused, less stressed and in control of my day. I have already recommended this app to all my family and friends!", user: "buickqwe", image: reviewBuick, rating: 5 },
-  { quote: "It’s like it was designed exactly for me.", user: "ChloeSheldon123!!", image: reviewChloe, rating: 5 },
+  {
+    quote:
+      "Loving having everything in one place! Having an app that not only tracks my habits but has the activities and systems built in too, has made it so much more achievable to build my dream routine.",
+    user: "Ljp1245",
+    image: review1,
+    rating: 5,
+  },
+  {
+    quote:
+      "After just a few weeks I already feel happier, more focused, less stressed and in control of my day. I have already recommended this app to all my family and friends!",
+    user: "buickqwe",
+    image: review2,
+    rating: 5,
+  },
+  {
+    quote: "It’s like it was designed exactly for me.",
+    user: "ChloeSheldon123!!",
+    image: review3,
+    rating: 5,
+  },
 ];

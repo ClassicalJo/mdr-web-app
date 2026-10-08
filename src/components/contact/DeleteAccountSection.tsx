@@ -23,7 +23,9 @@ export function DeleteAccountSection() {
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <div className="glass-panel rounded-3xl p-7 sm:p-9">
-            <span className="font-kick text-xs font-semibold uppercase text-primary">Steps to delete your account</span>
+            <span className="font-kick text-xs font-semibold uppercase text-primary">
+              Steps to delete your account
+            </span>
             <ol className="mt-6 space-y-5">
               {steps.map((step, i) => (
                 <li key={step} className="flex gap-4">
@@ -37,7 +39,9 @@ export function DeleteAccountSection() {
           </div>
           <div className="flex flex-col gap-5">
             <div className="glass-panel rounded-3xl p-7 sm:p-9">
-              <span className="font-kick text-xs font-semibold uppercase text-primary">Data that will be deleted</span>
+              <span className="font-kick text-xs font-semibold uppercase text-primary">
+                Data that will be deleted
+              </span>
               <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/80">
                 {dataDeleted.map((item) => (
                   <li key={item} className="flex gap-3">
@@ -48,19 +52,28 @@ export function DeleteAccountSection() {
               </ul>
             </div>
             <div className="glass-panel rounded-3xl p-7 sm:p-9">
-              <span className="font-kick text-xs font-semibold uppercase text-primary">Data retention</span>
+              <span className="font-kick text-xs font-semibold uppercase text-primary">
+                Data retention
+              </span>
               <p className="mt-5 text-sm leading-relaxed text-foreground/80">
-                When you delete your account, it will immediately become inaccessible and will no longer be used within My Daily Ritual. For technical, legal, or security reasons, certain data may be retained in our systems for a limited period before being permanently deleted.
+                When you delete your account, it will immediately become inaccessible and will no
+                longer be used within My Daily Ritual. For technical, legal, or security reasons,
+                certain data may be retained in our systems for a limited period before being
+                permanently deleted.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                Once this process is complete, your account and associated data will be permanently removed.
+                Once this process is complete, your account and associated data will be permanently
+                removed.
               </p>
             </div>
           </div>
         </div>
         <p className="mt-10 text-sm text-muted-foreground">
           Any concerns or questions:{" "}
-          <a href="mailto:admin@dailyritualapp.com" className="font-medium text-primary underline-offset-4 hover:underline">
+          <a
+            href="mailto:admin@dailyritualapp.com"
+            className="font-medium text-primary underline-offset-4 hover:underline"
+          >
             admin@dailyritualapp.com
           </a>
         </p>

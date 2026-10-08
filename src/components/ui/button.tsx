@@ -16,9 +16,12 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        ritual: "rounded-full bg-primary text-primary-foreground shadow-none hover:-translate-y-0.5 hover:bg-primary/90",
-        ritualDark: "rounded-full bg-foreground text-background shadow-none hover:-translate-y-0.5 hover:bg-foreground/90",
-        ritualSoft: "rounded-full border border-border bg-surface-glass text-foreground shadow-none backdrop-blur-md hover:-translate-y-0.5 hover:bg-card",
+        ritual:
+          "rounded-full bg-primary text-primary-foreground shadow-none hover:-translate-y-0.5 hover:bg-primary/90",
+        ritualDark:
+          "rounded-full bg-foreground text-background shadow-none hover:-translate-y-0.5 hover:bg-foreground/90",
+        ritualSoft:
+          "rounded-full border border-border bg-surface-glass text-foreground shadow-none backdrop-blur-md hover:-translate-y-0.5 hover:bg-card",
       },
       size: {
         default: "h-9 px-4 py-2",

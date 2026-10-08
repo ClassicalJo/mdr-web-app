@@ -17,13 +17,21 @@ export function HeroSection() {
             Turn daily habits into <span className="italic text-primary">meaningful rituals.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
-            My Daily Ritual is the all-in-one wellness and productivity app designed for real life — bringing the systems you need to start and stay accountable into one calm daily flow.
+            My Daily Ritual is the all-in-one wellness and productivity app designed for real life —
+            bringing the systems you need to start and stay accountable into one calm daily flow.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button variant="ritual" size="store" asChild><a href="#download">Get the app <ArrowRight /></a></Button>
+            <Button variant="ritual" size="store" asChild>
+              <a href="#download">
+                Get the app <ArrowRight />
+              </a>
+            </Button>
             <AppDownloadButtons compact />
           </div>
-          <a href="#toolkit" className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+          <a
+            href="#toolkit"
+            className="mt-9 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
             Explore your toolkit <ArrowDown className="size-4" />
           </a>
         </div>
@@ -32,12 +40,33 @@ export function HeroSection() {
             <HeroScreens />
           </div>
           <div className="ritual-float glass-panel absolute left-0 top-14 w-40 -rotate-6 rounded-2xl p-4 shadow-xl shadow-foreground/10 ring-1 ring-foreground/5 sm:w-48">
-            <div className="flex items-center justify-between"><span className="font-kick text-xs font-semibold uppercase text-primary">Morning ritual</span><span className="text-xs text-sage">3/5</span></div>
-            <div className="mt-3 space-y-2 text-xs"><p className="flex items-center gap-2"><span className="grid size-4 place-items-center rounded-full bg-sage text-primary-foreground"><Check className="size-2.5" /></span>Gratitude</p><p className="flex items-center gap-2"><span className="grid size-4 place-items-center rounded-full bg-sage text-primary-foreground"><Check className="size-2.5" /></span>Mantra</p></div>
+            <div className="flex items-center justify-between">
+              <span className="font-kick text-xs font-semibold uppercase text-primary">
+                Morning ritual
+              </span>
+              <span className="text-xs text-sage">3/5</span>
+            </div>
+            <div className="mt-3 space-y-2 text-xs">
+              <p className="flex items-center gap-2">
+                <span className="grid size-4 place-items-center rounded-full bg-sage text-primary-foreground">
+                  <Check className="size-2.5" />
+                </span>
+                Gratitude
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="grid size-4 place-items-center rounded-full bg-sage text-primary-foreground">
+                  <Check className="size-2.5" />
+                </span>
+                Mantra
+              </p>
+            </div>
           </div>
           <div className="ritual-float-alt glass-panel absolute bottom-20 right-0 w-36 rotate-6 rounded-2xl p-4 text-center shadow-xl shadow-foreground/10 ring-1 ring-foreground/5 sm:w-44">
-            <span className="font-kick text-xs font-semibold uppercase text-primary">Your streak</span>
-            <p className="mt-1 font-display text-4xl">12</p><span className="text-xs text-muted-foreground">days of showing up</span>
+            <span className="font-kick text-xs font-semibold uppercase text-primary">
+              Your streak
+            </span>
+            <p className="mt-1 font-display text-4xl">12</p>
+            <span className="text-xs text-muted-foreground">days of showing up</span>
           </div>
         </div>
       </div>

@@ -41,25 +41,58 @@ export function HeroScreens() {
           alt={`My Daily Ritual app — ${s.label}`}
           aria-hidden={i !== active}
           fetchPriority={i === 0 ? "high" : undefined}
-           className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"}`}
         />
       ))}
-      {!reducedMotion && !videoFailed && <video ref={video} poster={appScreens[0]?.src} muted playsInline preload="auto" aria-label="My Daily Ritual Home app preview" aria-hidden={active !== 0} onEnded={() => { if (video.current) video.current.currentTime = 0; setActive(1); }} onError={() => setVideoFailed(true)} className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ${active === 0 ? "opacity-100" : "opacity-0"}`}><source src={homeWebmUrl} type="video/webm" /><source src={homeVideoUrl} type="video/mp4" /></video>}
+      {!reducedMotion && !videoFailed && (
+        <video
+          ref={video}
+          poster={appScreens[0]?.src}
+          muted
+          playsInline
+          preload="auto"
+          aria-label="My Daily Ritual Home app preview"
+          aria-hidden={active !== 0}
+          onEnded={() => {
+            if (video.current) video.current.currentTime = 0;
+            setActive(1);
+          }}
+          onError={() => setVideoFailed(true)}
+          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ${active === 0 ? "opacity-100" : "opacity-0"}`}
+        >
+          <source src={homeWebmUrl} type="video/webm" />
+          <source src={homeVideoUrl} type="video/mp4" />
+        </video>
+      )}
       <div className="absolute inset-x-0 bottom-3 flex justify-center">
         <div className="flex items-center gap-1.5 rounded-full bg-background/75 px-2.5 py-1.5 backdrop-blur-md">
           {appScreens.map((s, i) => (
             <Button
               key={s.label}
               type="button"
-               variant="ghost"
-               size="icon"
+              variant="ghost"
+              size="icon"
               onClick={() => setActive(i)}
               aria-label={`Show ${s.label} screen`}
               aria-current={i === active}
-               className="size-6 rounded-full p-0"
-            ><span className={`h-1.5 rounded-full transition-all duration-500 ${i === active ? "w-5 bg-primary" : "w-1.5 bg-foreground/25"}`} /></Button>
+              className="size-6 rounded-full p-0"
+            >
+              <span
+                className={`h-1.5 rounded-full transition-all duration-500 ${i === active ? "w-5 bg-primary" : "w-1.5 bg-foreground/25"}`}
+              />
+            </Button>
           ))}
-          {!reducedMotion && <Button variant="ghost" size="icon" className="size-6" aria-label={paused ? "Play app preview" : "Pause app preview"} onClick={() => setPaused((value) => !value)}>{paused ? <Play className="size-3" /> : <Pause className="size-3" />}</Button>}
+          {!reducedMotion && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="size-6"
+              aria-label={paused ? "Play app preview" : "Pause app preview"}
+              onClick={() => setPaused((value) => !value)}
+            >
+              {paused ? <Play className="size-3" /> : <Pause className="size-3" />}
+            </Button>
+          )}
         </div>
       </div>
     </div>

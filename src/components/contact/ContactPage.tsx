@@ -43,15 +43,17 @@ export function ContactPage() {
           />
           <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <ContactForm />
-            <div className="flex flex-col gap-5">
+
+            <div className="grid gap-5">
               <div className="glass-panel overflow-hidden rounded-3xl">
                 <img
                   src={livAndEm}
                   alt="Liv, founder of My Daily Ritual"
-                  className="aspect-[4/5] w-full object-cover"
+                  className="aspect-[5/4] w-full object-cover object-center"
                   loading="lazy"
                 />
               </div>
+
               <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
                 {contactChannels.map((channel) => (
                   <a
@@ -64,8 +66,15 @@ export function ContactPage() {
                     <span className="grid size-10 place-items-center rounded-2xl bg-primary/10 text-primary">
                       <channel.icon className="size-4" />
                     </span>
-                    <span className="mt-4 font-kick text-xs font-semibold uppercase text-primary">{channel.title}</span>
-                    <span className="mt-1.5 break-words text-sm font-medium text-foreground">{channel.value}</span>
+
+                    <span className="mt-4 font-kick text-xs font-semibold uppercase text-primary">
+                      {channel.title}
+                    </span>
+
+                    <span className="mt-1.5 break-words text-sm font-medium text-foreground">
+                      {channel.value}
+                    </span>
+
                     <span className="mt-3 text-xs font-medium text-primary underline-offset-4 group-hover:underline">
                       {channel.action}
                     </span>

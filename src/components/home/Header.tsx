@@ -10,7 +10,9 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -19,18 +21,41 @@ export function Header() {
         <Link to="/" aria-label="My Daily Ritual home" className="shrink-0">
           <img src={logo} alt="My Daily Ritual" className="h-11 w-auto" />
         </Link>
-        <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-medium text-foreground/70 md:flex">
-          {navItems.map((item) => item.href.startsWith("http") ? (
-            <a key={item.label} href={item.href} className="transition-colors hover:text-primary">{item.label}</a>
-          ) : (
-            <Link key={item.label} to={item.href} activeProps={{ className: "text-foreground" }} className="transition-colors hover:text-primary">{item.label}</Link>
-          ))}
+        <nav
+          aria-label="Main navigation"
+          className="hidden items-center gap-7 text-sm font-medium text-foreground/70 md:flex"
+        >
+          {navItems.map((item) =>
+            item.href.startsWith("http") ? (
+              <a key={item.label} href={item.href} className="transition-colors hover:text-primary">
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                to={item.href}
+                activeProps={{ className: "text-foreground" }}
+                className="transition-colors hover:text-primary"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="ritualDark" className="hidden sm:inline-flex" asChild>
-            <a href="#download">Download <ArrowRight /></a>
+            <a href="#download">
+              Download <ArrowRight />
+            </a>
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
             {open ? <X /> : <Menu />}
           </Button>
         </div>
@@ -38,13 +63,31 @@ export function Header() {
       {open && (
         <div className="fixed inset-x-0 top-[69px] h-[calc(100dvh-69px)] bg-background px-5 py-8 md:hidden">
           <nav aria-label="Mobile navigation" className="flex flex-col">
-            {navItems.map((item) => item.href.startsWith("http") ? (
-              <a key={item.label} href={item.href} className="border-b border-border py-5 font-display text-3xl" onClick={() => setOpen(false)}>{item.label}</a>
-            ) : (
-              <Link key={item.label} to={item.href} className="border-b border-border py-5 font-display text-3xl" onClick={() => setOpen(false)}>{item.label}</Link>
-            ))}
+            {navItems.map((item) =>
+              item.href.startsWith("http") ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="border-b border-border py-5 font-display text-3xl"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="border-b border-border py-5 font-display text-3xl"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
             <Button variant="ritual" size="store" className="mt-8" asChild>
-              <a href="#download" onClick={() => setOpen(false)}>Download the app <ArrowRight /></a>
+              <a href="#download" onClick={() => setOpen(false)}>
+                Download the app <ArrowRight />
+              </a>
             </Button>
           </nav>
         </div>
