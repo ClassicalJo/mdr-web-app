@@ -2,13 +2,15 @@ import { Instagram, Mail, Phone } from "lucide-react";
 import { Footer } from "@/components/home/Footer";
 import { Header } from "@/components/home/Header";
 import { SectionHeading } from "@/components/home/SectionHeading";
+import { ContactForm } from "./ContactForm";
+import { DeleteAccountSection } from "./DeleteAccountSection";
+import livAndEm from "@/assets/mdr/liv-and-em.jpg";
 
 const contactChannels = [
   {
     icon: Mail,
     title: "Email",
     value: "admin@dailyritualapp.com",
-    note: "Any concerns or questions — we read every message.",
     href: "mailto:admin@dailyritualapp.com",
     action: "Send an email",
   },
@@ -16,7 +18,6 @@ const contactChannels = [
     icon: Phone,
     title: "Phone",
     value: "+61 414 211 540",
-    note: "Based in Australia — we'll get back to you as soon as we can.",
     href: "tel:+61414211540",
     action: "Call us",
   },
@@ -24,7 +25,6 @@ const contactChannels = [
     icon: Instagram,
     title: "Instagram",
     value: "@mydailyritual.co",
-    note: "Daily rituals, behind the scenes and community moments.",
     href: "https://www.instagram.com/mydailyritual.co/",
     action: "Follow along",
   },
@@ -39,30 +39,43 @@ export function ContactPage() {
           <SectionHeading
             eyebrow="Contact"
             title="We'd love to hear from you!"
-            description="Questions, feedback or just want to say hello — reach out through any of these channels and we'll get back to you."
+            description="Questions, feedback or just want to say hello — send us a message below or reach out through any of these channels."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {contactChannels.map((channel) => (
-              <a
-                key={channel.title}
-                href={channel.href}
-                target={channel.href.startsWith("http") ? "_blank" : undefined}
-                rel={channel.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group glass-panel flex flex-col rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1"
-              >
-                <span className="grid size-12 place-items-center rounded-2xl bg-primary/10 text-primary">
-                  <channel.icon className="size-5" />
-                </span>
-                <span className="mt-5 font-kick text-xs font-semibold uppercase text-primary">{channel.title}</span>
-                <span className="mt-2 font-display text-xl font-medium text-foreground">{channel.value}</span>
-                <span className="mt-3 text-sm leading-relaxed text-muted-foreground">{channel.note}</span>
-                <span className="mt-auto pt-6 text-sm font-medium text-primary underline-offset-4 group-hover:underline">
-                  {channel.action}
-                </span>
-              </a>
-            ))}
+          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <ContactForm />
+            <div className="flex flex-col gap-5">
+              <div className="glass-panel overflow-hidden rounded-3xl">
+                <img
+                  src={livAndEm}
+                  alt="Liv, founder of My Daily Ritual"
+                  className="aspect-[4/5] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                {contactChannels.map((channel) => (
+                  <a
+                    key={channel.title}
+                    href={channel.href}
+                    target={channel.href.startsWith("http") ? "_blank" : undefined}
+                    rel={channel.href.startsWith("http") ? "noreferrer" : undefined}
+                    className="group glass-panel flex flex-col rounded-3xl p-5 transition-transform duration-300 hover:-translate-y-1"
+                  >
+                    <span className="grid size-10 place-items-center rounded-2xl bg-primary/10 text-primary">
+                      <channel.icon className="size-4" />
+                    </span>
+                    <span className="mt-4 font-kick text-xs font-semibold uppercase text-primary">{channel.title}</span>
+                    <span className="mt-1.5 break-words text-sm font-medium text-foreground">{channel.value}</span>
+                    <span className="mt-3 text-xs font-medium text-primary underline-offset-4 group-hover:underline">
+                      {channel.action}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
+        <DeleteAccountSection />
       </main>
       <Footer />
     </div>
