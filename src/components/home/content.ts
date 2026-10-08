@@ -18,7 +18,7 @@ export const PLAY_STORE_URL =
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Marketplace", href: "/marketplace" },
-  { label: "Contact", href: "https://www.mydailyritual.app/contact" },
+  { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "https://www.mydailyritual.app/privacy-policy" },
 ];
 
