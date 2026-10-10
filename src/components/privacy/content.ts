@@ -55,12 +55,8 @@ export const policySections: PolicySection[] = [
         items: [
           "when you provide it directly to us, including face-to-face, over the phone, over email, or online;",
           "when you complete a form, such as registering for any events or newsletters, or responding to surveys;",
-          "when you use any website we operate (including from any analytics and cookie providers or marketing",
+          "when you use any website we operate (including from any analytics and cookie providers or marketing providers. See the “Cookies” section below for more detail on the use of cookies);",
         ],
-      },
-      {
-        type: "paragraph",
-        text: "providers. See the “Cookies” section below for more detail on the use of cookies);",
       },
       {
         type: "list",
@@ -85,12 +81,8 @@ export const policySections: PolicySection[] = [
           "to contact and communicate with you about any enquiries you make with us via any website we operate;",
           "for internal record keeping, administrative, invoicing and billing purposes;",
           "for analytics, market research and business development, including to operate and improve our business, associated applications and associated social media platforms;",
-          "for advertising and marketing, including to send you promotional information about our events and",
+          "for advertising and marketing, including to send you promotional information about our events and experiences and information that we consider may be of interest to you;",
         ],
-      },
-      {
-        type: "paragraph",
-        text: "experiences and information that we consider may be of interest to you;",
       },
       {
         type: "list",

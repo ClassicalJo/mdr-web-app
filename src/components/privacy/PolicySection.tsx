@@ -36,7 +36,7 @@ export function PolicySection({ section }: { section: PolicySectionData }) {
               <PolicyText text={block.text} />
             </p>
           ) : (
-            <ul key={index} className="list-disc space-y-3 pl-5 marker:text-sage">
+            <ul key={index} className="list-disc space-y-3 pl-5 marker:text-primary">
               {block.items.map((item, itemIndex) => (
                 <li key={itemIndex} className="pl-1">
                   <PolicyText text={item} />

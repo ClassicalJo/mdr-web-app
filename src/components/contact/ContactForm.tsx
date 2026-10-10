@@ -89,7 +89,7 @@ export function ContactForm() {
             value={fields.lastName}
             onChange={update("lastName")}
             className={`mt-2 ${inputClass}`}
-            placeholder="Smith"
+            placeholder="Phyland"
           />
           {errors.lastName && <p className="mt-2 text-xs text-destructive">{errors.lastName}</p>}
         </div>

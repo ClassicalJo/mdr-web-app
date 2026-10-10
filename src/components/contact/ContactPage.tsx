@@ -41,7 +41,7 @@ export function ContactPage() {
             title="We'd love to hear from you!"
             description="Questions, feedback or just want to say hello — send us a message below or reach out through any of these channels."
           />
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="mt-12 grid items-start gap-8 lg:grid-cols-[1fr_1fr]">
             <ContactForm />
 
             <div className="grid gap-5">
@@ -75,7 +75,7 @@ export function ContactPage() {
                       {channel.value}
                     </span>
 
-                    <span className="mt-3 text-xs font-medium text-primary underline-offset-4 group-hover:underline">
+                    <span className="mt-auto pt-3 text-xs font-medium text-primary underline-offset-4 group-hover:underline">
                       {channel.action}
                     </span>
                   </a>
