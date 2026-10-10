@@ -10,7 +10,7 @@ export const PLAY_STORE_URL =
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Contact", href: "/contact" },
-  { label: "Privacy Policy", href: "https://www.mydailyritual.app/privacy-policy" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Marketplace", href: "/marketplace" },
 ];
 

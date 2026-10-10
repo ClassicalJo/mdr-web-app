@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/mdr/logo.png";
 import { navItems } from "./content";
+import { ComingSoonMark } from "./ComingSoonMark";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,7 @@ export function Header() {
         </Link>
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-7 text-sm font-medium text-foreground/70 md:flex"
+          className="hidden items-center gap-5 text-sm font-medium text-foreground/70 md:flex"
         >
           {navItems.map((item) =>
             item.href.startsWith("http") ? (
@@ -35,18 +36,25 @@ export function Header() {
                 key={item.label}
                 to={item.href}
                 activeProps={{ className: "text-foreground" }}
-                className="transition-colors hover:text-primary"
+                className={`flex items-center gap-2 transition-colors hover:text-primary${item.href === "/marketplace" ? " mr-7" : ""}`}
               >
-                {item.label}
+                {item.href === "/marketplace" ? (
+                  <span className="relative">
+                    {item.label}
+                    <ComingSoonMark />
+                  </span>
+                ) : (
+                  item.label
+                )}
               </Link>
             ),
           )}
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="ritualDark" className="hidden sm:inline-flex" asChild>
-            <a href="#download">
+            <Link to="/" hash="download" preload="intent">
               Download <ArrowRight />
-            </a>
+            </Link>
           </Button>
           <Button
             variant="ghost"
@@ -77,17 +85,24 @@ export function Header() {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="border-b border-border py-5 font-display text-3xl"
+                  className="flex flex-wrap items-center gap-3 border-b border-border py-5 font-display text-3xl"
                   onClick={() => setOpen(false)}
                 >
-                  {item.label}
+                  {item.href === "/marketplace" ? (
+                    <span className="relative">
+                      {item.label}
+                      <ComingSoonMark />
+                    </span>
+                  ) : (
+                    item.label
+                  )}
                 </Link>
               ),
             )}
             <Button variant="ritual" size="store" className="mt-8" asChild>
-              <a href="#download" onClick={() => setOpen(false)}>
+              <Link to="/" hash="download" preload="intent" onClick={() => setOpen(false)}>
                 Download the app <ArrowRight />
-              </a>
+              </Link>
             </Button>
           </nav>
         </div>
