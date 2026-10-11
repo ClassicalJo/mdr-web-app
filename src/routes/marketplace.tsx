@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/mdr/logo.png";
 import { Header } from "@/components/home/Header";
+import { Footer } from "@/components/home/Footer";
 
 export const Route = createFileRoute("/marketplace")({
   head: () => ({
@@ -22,7 +23,7 @@ function MarketplacePage() {
   return (
     <div className="min-h-screen bg-tea-mist text-foreground selection:bg-primary/15">
       <Header />
-      <main className="grid min-h-screen place-items-center bg-background px-5 text-center">
+      <main className="py-20 place-items-center bg-background px-5 text-center">
         <div className="max-w-xl">
           <Link to="/" aria-label="My Daily Ritual home">
             <img src={logo} alt="My Daily Ritual" className="mx-auto h-24 w-auto" />
@@ -44,6 +45,7 @@ function MarketplacePage() {
           </Button>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
